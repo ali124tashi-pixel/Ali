@@ -1,0 +1,53 @@
+{
+  "sedan": [
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#d61f26"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#111"
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#0d6efd"
+    }
+  ],
+  "family": [
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#eee"
+    },
+    {
+      "id": "navy",
+      "name": "Navy",
+      "hex": "#001f3f"
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "hex": "#198754"
+    }
+  ],
+  "truck": [
+    {
+      "id": "silver",
+      "name": "Silver",
+      "hex": "#B0B8C1"
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "hex": "#fd7e14"
+    },
+    {
+      "id": "army",
+      "name": "Army",
+      "hex": "#556b2f"
+    }
+  ]
+}

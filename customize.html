@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assemble — Smart Car Factory</title>
+<link rel="icon" href="assets/images/LogoA.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" class="me-2" height="28" alt="Assemble"> <strong>Assemble</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="choose-type.html">Choose Type</a></li>
+        <li class="nav-item"><a class="nav-link" href="customize.html">Customize</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <main class="container py-5 mt-4">
+      <h1 class="h4 mb-4 text-center">Customize Your Car</h1>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-6">
+          <div class="customizer-view card shadow-sm">
+            <img id="carImage" src="assets/images/sedan_color_red.png" class="card-img-top" alt="car">
+            <div class="card-body">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="fw-bold">Exterior Color:</span>
+                <div id="colorSwatches" class="d-flex flex-wrap gap-2"></div>
+              </div>
+              <hr>
+              <div class="d-grid gap-2">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="leatherSeats">
+                  <label class="form-check-label" for="leatherSeats">Leather Seats</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="sunroof">
+                  <label class="form-check-label" for="sunroof">Sunroof</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="ambient">
+                  <label class="form-check-label" for="ambient">Ambient Lighting</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="mb-3">Specifications</h5>
+              <div class="row row-cols-1 row-cols-md-2 g-3">
+                <div class="col"><label class="form-label">Engine</label>
+                  <select id="engine" class="form-select">
+                    <option>1.6L</option><option>2.0L</option><option>Hybrid</option>
+                  </select>
+                </div>
+                <div class="col"><label class="form-label">Transmission</label>
+                  <select id="gear" class="form-select">
+                    <option>Manual</option><option>Automatic</option>
+                  </select>
+                </div>
+                <div class="col"><label class="form-label">Rims</label>
+                  <select id="rims" class="form-select">
+                    <option>16"</option><option>18"</option><option>20"</option>
+                  </select>
+                </div>
+                <div class="col"><label class="form-label">Interior Trim</label>
+                  <select id="interior" class="form-select">
+                    <option>Cloth</option><option>Leather</option><option>Premium Leather</option>
+                  </select>
+                </div>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between">
+                <span class="fw-bold">Estimated price: <span id="price">18,000</span> $</span>
+                <button id="btnSaveConfig" class="btn btn-primary">Save Configuration</button>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-secondary mt-3">Colors are loaded from <code>assets/data/colors.json</code> using <strong>fetch</strong>.</div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-light py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div>
+      <img src="assets/images/LogoA.png" height="24" class="me-2" alt="">
+      <strong>Assemble</strong> &copy; <span id="year"></span>
+    </div>
+    <div class="social d-flex gap-3">
+      <a href="#" class="text-light" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-light" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="text-light" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="contact.html" class="btn btn-outline-light btn-sm">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="position-fixed bottom-0 start-0 p-3" style="z-index:11">
+      <div id="saveToast" class="toast text-bg-success border-0">
+        <div class="d-flex">
+          <div class="toast-body">Configuration saved to your browser.</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+  </body>
+</html]
